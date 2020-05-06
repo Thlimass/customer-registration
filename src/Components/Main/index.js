@@ -1,7 +1,20 @@
-import React from "react";
+import React, { Component } from "react";
 import {Container} from 'reactstrap';
+import { cpfMask} from "../../Services/cpfMask";
 
-const Main = () => {
+class Main extends Component {
+    constructor(props) {
+        super(props)
+        this.state = { documentId: '' }
+        this.handlechange = this.handlechange.bind(this)
+    }
+
+    handlechange(e) {
+        this.setState({documentId: cpfMask(e.target.value)})
+    }
+
+    render() {
+        const { documentId } = this.state
 
     return (
         <main>
@@ -36,8 +49,8 @@ const Main = () => {
                         </div>
                         <div className="col-md-3 mb-3">
                             <label htmlFor="validationTooltip03">CPF</label>
-                            <input type="text" className="form-control" id="validationTooltip03"
-                                   placeholder="000.000.000-00" required/>
+                            <input maxLength='14' name='documentId' value={documentId} onChange={this.handlechange}
+                                   className="form-control" id="validationTooltip03" placeholder="000.000.000-00" required/>
                             <div className="invalid-tooltip">
                                 Forneça um CPF válido.
                             </div>
@@ -123,7 +136,7 @@ const Main = () => {
                 </form>
             </Container>
         </main>
-    );
+    )};
 }
 
 export default Main;
