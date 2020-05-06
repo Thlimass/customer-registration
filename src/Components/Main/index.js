@@ -10,14 +10,16 @@ const Main = () => {
                     <div className="form-row">
                         <div className="col-md-4 mb-3">
                             <label htmlFor="validationTooltip01">Primeiro Nome</label>
-                            <input type="text" className="form-control" id="validationTooltip01" placeholder="Digite seu nome" required/>
+                            <input type="text" className="form-control" id="validationTooltip01"
+                                   placeholder="Digite seu nome" required/>
                             <div className="valid-tooltip">
                                 Parece bom!
                             </div>
                         </div>
                         <div className="col-md-4 mb-3">
                             <label htmlFor="validationTooltip02">Último Nome</label>
-                            <input type="text" className="form-control" id="validationTooltip02" placeholder="Digite seu sobrenome" required/>
+                            <input type="text" className="form-control" id="validationTooltip02"
+                                   placeholder="Digite seu sobrenome" required/>
                             <div className="valid-tooltip">
                                 Parece bom!
                             </div>
